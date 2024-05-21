@@ -1,0 +1,45 @@
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: skyblue;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.heading {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.dialogue {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.bird {
+    position: absolute;
+    top: 50%;
+    left: -100px; /* Start position off-screen */
+    width: 300px; /* Make the bird 100px wide */
+    height: auto;
+    animation: fly 20s linear infinite; /* Increase animation duration for slower movement */
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateX(-1000px);
+    }
+    50% {
+        transform: translateX(calc(100vw + 100px));
+    }
+}
+
